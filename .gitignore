@@ -49,3 +49,6 @@ node_modules
 
 # .env
 .env
+
+# Bin folder
+bin
