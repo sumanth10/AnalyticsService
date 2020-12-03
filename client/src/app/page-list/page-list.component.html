@@ -1,0 +1,28 @@
+<div class="container wrapper">
+    <div class="row">
+
+        <!-- Issue table -->
+        <div class="col-md-12">
+            <div class="inner">
+                <h3>Pages</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Page Name</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let page of PageListDisp">
+                            <th scope="row">{{page.name}}</th>
+                            <td>
+                                <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['', page.id]">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

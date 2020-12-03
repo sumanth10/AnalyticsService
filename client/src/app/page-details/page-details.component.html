@@ -1,0 +1,51 @@
+<div class="container wrapper">
+  <div class="row" *ngIf= "PageName.length == 0">
+    <div class="inner marginTop marginBottom">
+    <h2>Page not found</h2>
+  </div>
+  </div>
+  <div *ngIf= "PageName.length !== 0">
+    <div class="row" >
+      <div class="col-md-12">
+        <div class="inner marginTop marginBottom">
+          <h2>Pages : {{PageName}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="inner marginTop marginBottom">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{PageActivityCount}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Users</h6>
+              <p class="card-text">Active users in last 30 min</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="inner marginTop marginBottom">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{PageActivityRate}}%</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Users</h6>
+              <p class="card-text">Returning user rate within 1 day</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="inner marginTop marginBottom">
+        <ngx-charts-bar-vertical [view]="view" [scheme]="colorScheme" [results]="graphCountryData" [gradient]="gradient"
+          [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+          (select)="onSelect($event)">
+        </ngx-charts-bar-vertical>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
